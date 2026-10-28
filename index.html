@@ -98,13 +98,13 @@
 
 
 
+                
                 <button id="confettiBtn">Click for a Surprise!</button>
         
-        <!-- Add this new hidden message directly below the button -->
-        <p id="hiddenMessage" style="display: none; color: #ff4b4b; font-size: 1.5em; font-weight: bold; margin-top: 20px;">
-            Surprise! You are the absolute best! 💖
-        </p>
+        <!-- Add this hidden video directly below the button -->
+        <video id="surpriseVideo" src="surprise.mp4" style="display: none; width: 100%; border-radius: 15px; margin-top: 20px;"></video>
     </div> <!-- This is the end of the card div -->
+        
     
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -112,8 +112,10 @@
     <script>
         document.getElementById('confettiBtn').addEventListener('click', () => {
 
-              // REVEAL THE HIDDEN MESSAGE
-            document.getElementById('hiddenMessage').style.display = 'block';
+            // REVEAL AND PLAY THE VIDEO
+            const video = document.getElementById('surpriseVideo');
+            video.style.display = 'block';
+            video.play();
             
             // Play music 
             document.getElementById('bgMusic').play();
